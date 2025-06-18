@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}chai or tweet{% endblock %}
+{% block content  %}
+<h2 class="">edit tweet</h2>
+<h2>
+    {% if form.instance.pk %}
+    edit tweet
+    {% else %}
+    create tweet
+    {% endif %}
+</h2>    
+    <form method="post" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+    {{form}}
+    <button class="btn btn-warning">confirm</button>
+    <br>
+    <button>
+        
+    <a href="{% url 'tweet_list' %} ">back</a>
+    </button>
+    </form>
+
+
+
+{% endblock %}
