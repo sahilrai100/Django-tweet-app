@@ -12,10 +12,6 @@ Users can create, edit, delete tweets, and upload photos with them.
 - ✅ View All Tweets
 - ✅ Django Admin Panel
 
-## 📸 Screenshots
-
-_Add your screenshots here by uploading in the repo or using image links._
-
 ## 🚀 Tech Stack
 
 - **Frontend:** HTML, CSS, Bootstrap
