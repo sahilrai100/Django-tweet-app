@@ -41,12 +41,3 @@ python manage.py runserver
 
 
 
-1. go to github repo then `Add file` → `Upload files`.
-2. Upload `screenshot1.png`, `screenshot2.png`, etc.
-3. Fir README me yeh daal:
-
-```markdown
-## 📸 Screenshots
-
-![Home Page](screenshot1.png)
-![Tweet Form](screenshot2.png)
