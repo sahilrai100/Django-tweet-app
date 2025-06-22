@@ -1,0 +1,52 @@
+# Django Settings
+SECRET_KEY=django-insecure-nd%bu8va7a!e!7g)n4hkhvga1a8h8@2unk8)q0j6moy-0kg1nk
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Database Settings
+DATABASE_URL=sqlite:///db.sqlite3
+
+# Email Settings (for future use)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=your-email@gmail.com
+EMAIL_HOST_PASSWORD=your-app-password
+
+# Admin Credentials
+ADMIN_USERNAME=admin
+ADMIN_EMAIL=admin@tweetbar.com
+ADMIN_PASSWORD=admin123
+
+# Test User Credentials
+TEST_USER_USERNAME=testuser
+TEST_USER_PASSWORD=testpass123
+
+# Sinchan User Credentials
+SINCHAN_USERNAME=sinchan_fan
+SINCHAN_PASSWORD=password123
+
+# API Keys (for future use)
+# GOOGLE_API_KEY=your-google-api-key
+# AWS_ACCESS_KEY_ID=your-aws-access-key
+# AWS_SECRET_ACCESS_KEY=your-aws-secret-key
+
+# Security Settings
+CSRF_TRUSTED_ORIGINS=http://localhost:8001,http://127.0.0.1:8001
+SECURE_BROWSER_XSS_FILTER=True
+SECURE_CONTENT_TYPE_NOSNIFF=True
+
+# Static and Media Files
+STATIC_URL=/static/
+MEDIA_URL=/media/
+STATIC_ROOT=staticfiles
+MEDIA_ROOT=media
+
+# Login/Logout URLs
+LOGIN_URL=/account/login/
+LOGIN_REDIRECT_URL=/tweet/
+LOGOUT_REDIRECT_URL=/tweet/
+
+# Development Settings
+DEVELOPMENT_MODE=True
+ENVIRONMENT=development 

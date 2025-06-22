@@ -1,12 +1,83 @@
 {% extends "layout.html" %}
 
-{% block title %}chai or tweet{% endblock %}
-{% block content  %}
+{% block title %}Delete Tweet - TweetBar{% endblock %}
+{% block content %}
 
-<h2 class="text=center text-white">are you sure you want to delete the tweet</h2>
-<form method="post">
-    {% csrf_token %}
-    <button class="btn btn-danger">delete</button>
-    <a href="{%url 'tweet_list'%}" class="btn btn-success">cancel</a>
-</form>
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8">
+    <div class="card border-0 shadow-lg">
+      <div class="card-header bg-gradient-danger text-white text-center py-4">
+        <h2 class="mb-0">
+          <i class="fas fa-exclamation-triangle me-2"></i>
+          Delete Tweet
+        </h2>
+      </div>
+      
+      <div class="card-body p-5 text-center">
+        <div class="mb-4">
+          <i class="fas fa-trash-alt text-danger" style="font-size: 4rem;"></i>
+        </div>
+        
+        <h3 class="mb-3">Are you sure?</h3>
+        <p class="text-muted mb-4">
+          This action cannot be undone. The tweet will be permanently deleted.
+        </p>
+        
+        {% if tweet %}
+          <div class="alert alert-warning mb-4">
+            <div class="d-flex align-items-start">
+              <i class="fas fa-info-circle me-2 mt-1"></i>
+              <div>
+                <strong>Preview of the tweet to be deleted:</strong>
+                <p class="mb-1 mt-2">{{ tweet.text|truncatewords:20 }}</p>
+                {% if tweet.photo %}
+                  <small class="text-muted">Includes a photo</small>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        
+        <form method="post" class="d-inline">
+          {% csrf_token %}
+          <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'tweet_list' %}" class="btn btn-secondary btn-lg">
+              <i class="fas fa-times me-2"></i>Cancel
+            </a>
+            <button type="submit" class="btn btn-danger btn-lg">
+              <i class="fas fa-trash me-2"></i>Delete Tweet
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-danger {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+  }
+  
+  .card {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    border-bottom: none;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+  
+  .alert {
+    border-radius: 12px;
+    border: none;
+  }
+</style>
+
 {% endblock %}  
